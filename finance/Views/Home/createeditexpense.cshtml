@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "Create / Edit";
+}
+
+@model finance.Models.Expense;
+<div class="text-center">
+    <h1 class="display-4">Create Edit Expense</h1>
+   @* <a asp-controller="Home" asp-action="Expenses" class="btn btn-success">All Expenses</a> *@
+</div>
+
+<form class="row g-3" asp-action="CreateEditExpenseForm" asp-controller="Home">
+  <div class="col-md-6">
+    
+    <input hidden type="number" class="form-control" asp-for="Id">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Value</label>
+    <input type="number" class="form-control" asp-for="Value" step="0.01">
+  </div> 
+   <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Description</label>
+    <input type="text" class="form-control" asp-for="Description">
+  </div> 
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Done</button>
+  </div>
+</form>
